@@ -6,11 +6,14 @@ import {AnimalResponseDto} from './dto/animal-response.dto';
 import {CreateAnimalDto} from './dto/create-animal.dto';
 import {AnimalDto} from './dto/animal.dto';
 import {UpdateAnimalDto} from './dto/update-animal.dto';
-import {ParseIntPipe} from '@nestjs/common';
+import {ParseIntPipe, UseGuards} from '@nestjs/common';
+import { AuthGuard } from '@nestjs/passport';
+import { AuthGuardGrapqhl } from 'common/graphql/auth-graphql.guard';
 
 const logger = require('logger');
 
 @Resolver('Animal')
+@UseGuards(new AuthGuardGrapqhl())
 export class AnimalsResolver {
 
   constructor(private readonly animalService: AnimalService){}

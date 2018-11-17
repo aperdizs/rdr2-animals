@@ -64,16 +64,20 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
+## Generate Keys
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+Generate private key
 
-## Stay in touch
+```
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+openssl genrsa -passout pass:mysecret -out ./keys/privkey.pem 3072
 
-## License
+```
 
-  Nest is [MIT licensed](LICENSE).
+Public key from private key
+
+```
+
+openssl rsa -in ./keys/privkey.pem -passin pass:mysecret -pubout -out ./keys/privkey.pub
+
+```

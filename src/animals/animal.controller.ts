@@ -1,7 +1,8 @@
+import { AuthGuard } from '@nestjs/passport';
 import { CreateAnimalDto } from './dto/create-animal.dto';
 import { AnimalDto } from './dto/animal.dto';
 import { PaginationDto } from 'common/dto/pagination.dto';
-import { Controller, Req, Get, ParseIntPipe, Param, Post, Body, Put, Delete, Query } from "@nestjs/common";
+import { Controller, Req, Get, ParseIntPipe, Param, Post, Body, Put, Delete, Query, UseGuards } from "@nestjs/common";
 import { ApiUseTags, ApiResponse, ApiBearerAuth, ApiImplicitQuery, ApiOperation, ApiImplicitParam, ApiImplicitBody } from '@nestjs/swagger';
 import { Pagination } from "common/decorators/pagination.decorator";
 import { AnimalService } from './animal.service';
@@ -12,6 +13,8 @@ const logger = require('logger');
 
 @ApiUseTags('Animal')
 @Controller('api/v1/animal')
+@UseGuards(AuthGuard('jwt'))
+@ApiBearerAuth()
 export class AnimalController {
 
   constructor(private readonly animalService: AnimalService) {}

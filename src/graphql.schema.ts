@@ -10,6 +10,11 @@ export class CreateAnimalInput {
     description?: string;
 }
 
+export class LoginInput {
+    email: string;
+    password: string;
+}
+
 export class PaginationInput {
     pageSize?: number;
     pageNumber?: number;
@@ -50,6 +55,8 @@ export abstract class IMutation {
     abstract updateAnimal(id: string, body: UpdateAnimalInput): Animal | Promise<Animal>;
 
     abstract deleteAnimal(id: string): Animal | Promise<Animal>;
+
+    abstract login(body: LoginInput): Token | Promise<Token>;
 }
 
 export abstract class IQuery {
@@ -58,4 +65,8 @@ export abstract class IQuery {
     abstract findOneAnimal(id: string): Animal | Promise<Animal>;
 
     abstract temp__(): boolean | Promise<boolean>;
+}
+
+export class Token {
+    token: string;
 }
