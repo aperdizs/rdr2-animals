@@ -1,0 +1,44 @@
+type Animal {
+    id: ID!
+    name: String!
+    img: String!
+    type: String!
+    size: String
+    description: String
+}
+
+type AnimalReponse {
+    data: [Animal]!
+    meta: Meta
+}
+
+input CreateAnimalInput {
+    name: String!
+    img: String!
+    type: String!
+    size: String
+    description: String
+}
+
+input UpdateAnimalInput {
+    name: String
+    img: String
+    type: String
+    size: String
+    description: String
+}
+
+input AnimalFiltersInput {
+    type: String
+}
+
+type Query {
+    findAllAnimals(filters: AnimalFiltersInput = {}, pagination: PaginationInput = {}): AnimalReponse
+    findOneAnimal(id: ID!): Animal
+}
+
+type Mutation {
+    createAnimal(body: CreateAnimalInput!): Animal
+    updateAnimal(id: ID!, body: UpdateAnimalInput!): Animal
+    deleteAnimal(id: ID!): Animal
+}

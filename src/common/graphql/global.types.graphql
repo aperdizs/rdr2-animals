@@ -1,0 +1,11 @@
+type Meta {
+    totalPages: Int!
+    totalItems: Int!
+    size: Int!
+    page: Int!
+}
+
+input PaginationInput {
+    pageSize: Int = 10
+    pageNumber: Int = 1
+}

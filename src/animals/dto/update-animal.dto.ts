@@ -1,7 +1,8 @@
 import { IsString, IsOptional, MaxLength, IsUrl } from "class-validator";
 import { ApiModelProperty } from "@nestjs/swagger";
+import { UpdateAnimalInput } from 'graphql.schema';
 
-export class UpdateAnimalDto {
+export class UpdateAnimalDto extends UpdateAnimalInput {
 
   @IsString()
   @MaxLength(50)

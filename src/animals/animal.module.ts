@@ -2,12 +2,14 @@ import { Module, RequestMethod, MiddlewareConsumer } from '@nestjs/common';
 import { AnimalService } from './animal.service';
 import { AnimalController } from './animal.controller';
 import { PaginationMiddleware } from 'common/middlewares/pagination.middleware';
+import {AnimalsResolver} from './animals.resolver';
 
 @Module({
   controllers: [
     AnimalController
   ],
   providers: [
+    AnimalsResolver,
     AnimalService
   ]
 })

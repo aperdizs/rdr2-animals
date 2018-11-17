@@ -1,8 +1,11 @@
-export class PaginationDto {
-    pageSize?: number = 10;
-    pageNumber?: number = 1;
+import { PaginationInput } from 'graphql.schema';
 
-    constructor(data: Partial<PaginationDto>) {
-        Object.assign(this, data);
-    }
+export class PaginationDto extends PaginationInput {
+  pageSize?: number = 10;
+  pageNumber?: number = 1;
+
+  constructor(data: Partial<PaginationDto>) {
+    super()
+    Object.assign(this, data);
+  }
 }

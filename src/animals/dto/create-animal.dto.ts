@@ -1,7 +1,8 @@
 import { IsString, MaxLength, IsUrl, IsIn, IsOptional } from 'class-validator';
 import { ApiModelProperty } from '@nestjs/swagger';
+import { CreateAnimalInput } from 'graphql.schema';
 
-export class CreateAnimalDto {
+export class CreateAnimalDto extends CreateAnimalInput {
 
   @IsString()
   @MaxLength(50)
@@ -28,7 +29,5 @@ export class CreateAnimalDto {
   @MaxLength(255)
   @ApiModelProperty({ required: false, type: String, maxLength: 255 })
   description?: string;
-
-
 
 }
