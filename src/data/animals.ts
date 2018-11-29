@@ -1,6 +1,6 @@
-import { AnimalDto } from "animals/dto/animal.dto";
+import { AnimalDto } from "animal/dto/animal.dto";
 
-export const animals: AnimalDto[] = [
+export const animals = [
   {
       "name":"Alligator",
       "img":"https://img.rankedboost.com/wp-content/plugins/red-dead-redemption-2/assets/animal/Legendary Bull Gator.jpg",

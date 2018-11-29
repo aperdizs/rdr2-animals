@@ -21,13 +21,16 @@
   "dependencies": {
     "@nestjs/common": "^5.4.0",
     "@nestjs/core": "^5.4.0",
+    "@nestjs/mongoose": "^5.2.2",
     "@nestjs/swagger": "^2.5.1",
     "bunyan": "^1.8.12",
     "class-transformer": "^0.2.0",
     "class-validator": "^0.9.1",
+    "mongoose": "^5.3.13",
     "reflect-metadata": "^0.1.12",
     "rimraf": "^2.6.2",
     "rxjs": "^6.2.2",
+    "shortid": "^2.2.14",
     "typescript": "^3.0.1"
   },
   "devDependencies": {

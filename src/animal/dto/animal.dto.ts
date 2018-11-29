@@ -1,9 +1,9 @@
-import { ApiModelProperty } from "@nestjs/swagger";
+import { ApiModelProperty } from '@nestjs/swagger';
 
 export class AnimalDto {
 
-  @ApiModelProperty({ required: true, type: Number })
-  id: number;
+  @ApiModelProperty({ required: true, type: String })
+  _id: string;
 
   @ApiModelProperty({ required: true, type: String, maxLength: 50 })
   name: string;
@@ -21,10 +21,10 @@ export class AnimalDto {
   description?: string;
 
 
-  constructor(id: number, partial: Partial<AnimalDto>) {
-    const {name, size, img, type, description} = partial; 
+  constructor(_id: string, partial: Partial<AnimalDto>) {
+    const {name, size, img, type, description} = partial;
     Object.assign(this, {name, size, img, type, description});
-    this.id = id;
+    this._id = _id;
   }
-  
+
 }

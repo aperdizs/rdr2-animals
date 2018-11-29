@@ -7,7 +7,7 @@ module.exports = (() => {
   }];
   const logger = bunyan.createLogger({
     streams,
-    name: 'rd2-animals-api',
+    name: 'rd2-animal-api',
     src: true,
   });
   return logger;

@@ -1,5 +1,5 @@
-import { IsString, IsOptional, MaxLength, IsUrl } from "class-validator";
-import { ApiModelProperty } from "@nestjs/swagger";
+import { IsString, IsOptional, MaxLength, IsUrl } from 'class-validator';
+import { ApiModelProperty } from '@nestjs/swagger';
 
 export class UpdateAnimalDto {
 
